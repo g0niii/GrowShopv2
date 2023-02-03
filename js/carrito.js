@@ -74,27 +74,109 @@ function eliminarDelCarrito(e) {
 botonDeVaciar.addEventListener("click", vaciarCarrito);
 
 function vaciarCarrito() {
-    productosEnCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
-    cargarProductosCarrito();
+    
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        productosEnCarrito.length = 0;
+        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+        cargarProductosCarrito();
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
+          )
+        }
+      })
 }
 
 
 function elTotal() {
-    const contenedorTotal = productosEnCarrito.reduce((acumulador, productos) => (productos.precio * productos.cantidad), 0)
-    total.innerText = `$${contenedorTotal}`
+    let sumaSubtotal = 0
+    let consumoTotal = 0
+    productosEnCarrito.forEach(producto => {
+    sumaSubtotal = producto.precio * producto.cantidad
+    consumoTotal = sumaSubtotal + consumoTotal
+    })
+    total.innerText = `$${consumoTotal}`
+    // const contenedorTotal = productosEnCarrito.reduce((acumulador, productos) => (productos.precio * productos.cantidad), 0)
+    // total.innerText = `$${contenedorTotal}`
 }
+
 
 btnComprar.addEventListener("click", comprarCarrito)
 
-function comprarCarrito (){
-        productosEnCarrito.length = 0;
-        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
-        contenedorCarritoVacio.classList.add("disabled")
-        contenedorCarritoProductos.classList.add("disabled")
-        contenedorCarritoAcciones.classList.add("disabled")
-        contenedorCarritoComprado.classList.remove("disabled")
+function comprarCarrito() {
+    productosEnCarrito.length = 0;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+    contenedorCarritoVacio.classList.add("disabled")
+    contenedorCarritoProductos.classList.add("disabled")
+    contenedorCarritoAcciones.classList.add("disabled")
+    contenedorCarritoComprado.classList.remove("disabled")
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
