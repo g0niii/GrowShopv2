@@ -107,7 +107,6 @@ function agregarloAlCarrito(e){
 function actualizarNum(){
     let numeritoNew = productosEnCarrito.reduce((acum, producto) => acum + producto.cantidad,0)
     numerito.innerText = numeritoNew
-
 }
 
 
