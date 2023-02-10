@@ -84,8 +84,7 @@ function vaciarCarrito() {
       })
       
       swalWithBootstrapButtons.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Estas seguro que desea vaciar el carrito?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Yes, delete it!',
@@ -94,8 +93,8 @@ function vaciarCarrito() {
       }).then((result) => {
         if (result.isConfirmed) {
           swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
+            'Sus productos han sido eliminados del carrito!',
+            '',
             'success'
           )
         productosEnCarrito.length = 0;
@@ -106,8 +105,8 @@ function vaciarCarrito() {
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
+            '',
+            'Cancelado',
             'error'
           )
         }
