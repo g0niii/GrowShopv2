@@ -344,8 +344,9 @@ footer img{
         align-items: center;
     }
     .logo img{
-        display: none;
-   }
+        width: 80px;
+    }
+    }
    .header-mobile .logo{
     color: var(--color3);
    }
