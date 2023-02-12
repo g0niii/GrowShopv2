@@ -84,11 +84,11 @@ function vaciarCarrito() {
       })
       
       swalWithBootstrapButtons.fire({
-        title: 'Estas seguro que desea vaciar el carrito?',
+        title: 'Estas seguro que deseas vaciar el carrito?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, cancel!',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar',
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {

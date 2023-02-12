@@ -1,0 +1,113 @@
+[
+    {"id":"sema-01",
+     "productName":"Purple Punch",
+     "imagen": "./img/01.jpg", 
+     "categoria": {
+        "productName":"Semillas Feminizadas", 
+        "id":"semillasFem"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-02",
+     "productName":"Bubble Gum",
+     "imagen": "./img/02.jpg", 
+     "categoria": {
+        "productName":"Semillas Feminizadas", 
+        "id":"semillasFem"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-03",
+     "productName":"Critical Fast",
+     "imagen": "./img/03.jpg", 
+     "categoria": {
+        "productName":"Semillas Feminizadas", 
+        "id":"semillasFem"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-04",
+     "productName":"Wifi Tangie",
+     "imagen": "./img/04.jpg", 
+     "categoria": {
+        "productName":"Semillas Feminizadas", 
+        "id":"semillasFem"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-05",
+     "productName":"Power Skunk",
+     "imagen": "./img/05.jpg", 
+     "categoria": {
+        "productName":"Semillas Automaticas", 
+        "id":"semillasAuto"
+    }, 
+     "precio":1500
+     } ,
+     {"id":"sema-06",
+     "productName":"Super Skunk",
+     "imagen": "./img/06.jpg", 
+     "categoria": {
+        "productName":"Semillas Automaticas", 
+        "id":"semillasAuto"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-07",
+     "productName":"CBD CONNECTAR",
+     "imagen": "./img/07.jpg", 
+     "categoria": {
+        "productName":"Semillas Automaticas", 
+        "id":"semillasAuto"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-08",
+     "productName":"Girl Scout Cookies",
+     "imagen": "./img/08.jpg", 
+     "categoria": {
+        "productName":"Semillas Automaticas", 
+        "id":"semillasAuto"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-09",
+     "productName":"Pipa de vidrio",
+     "imagen": "./img/09.jpg", 
+     "categoria": {
+        "productName":"Pipas", 
+        "id":"pipas"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-10",
+     "productName":"Pipa de vidrio 2",
+     "imagen": "./img/10.jpg", 
+     "categoria": {
+        "productName":"Pipas", 
+        "id":"pipas"
+     }, 
+     "precio":1500
+     } ,
+     {"id":"sema-11",
+     "productName":"Pipa de vidrio 3",
+     "imagen": "./img/11.jpg", 
+     "categoria": {
+        "productName":"Pipas", 
+        "id":"pipas"
+     },
+     "precio":1500
+     } ,
+     {"id":"sema-12",
+     "productName":"Pipa de Hueso",
+     "imagen": "./img/12.jpg", 
+     "categoria": {
+        "productName":"Pipas", 
+        "id":"pipas"
+    },
+     "precio":1500
+     } 
+     
+    
+
+]

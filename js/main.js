@@ -1,28 +1,37 @@
 
-function Producto(id, productName, imagen, categoria, precio) {
-    this.id = id;
-    this.productName = productName;
-    this.imagen = imagen;
-    this.categoria = categoria;
-    this.precio = precio;
+// function Producto(id, productName, imagen, categoria, precio) {
+//     this.id = id;
+//     this.productName = productName;
+//     this.imagen = imagen;
+//     this.categoria = categoria;
+//     this.precio = precio;
     
-}
+// }
 
-const productos = [
-    new Producto("sema-01", "Purple Punch", "./img/01.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
-    new Producto("sema-02", "Bubble Gum", "./img/02.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
-    new Producto("sema-03", "Critical Fast", "./img/03.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
-    new Producto("sema-04", "Wifi Tangie", "./img/04.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
-    new Producto("sema-05", "Power Skunk", "./img/05.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
-    new Producto("sema-06", "Super Skunk", "./img/06.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
-    new Producto("sema-07", "CBD CONNECTAR", "./img/07.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
-    new Producto("sema-08", "Girl Scout Cookies", "./img/08.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
-    new Producto("pipa-09", "Pipa de vidrio", "./img/09.jpg", {nombre:"Pipas", id:"pipas"}, 1500),
-    new Producto("sema-10", "Pipa de vidrio 2", "./img/10.jpg", {nombre:"Pipas", id:"pipas"}, 1500),
-    new Producto("pipa-11", "Pipa de vidrio 3", "./img/11.jpg", {nombre:"Pipas", id:"pipas"}, 1500),
-    new Producto("pipa-12", "Pipa de Hueso", "./img/12.jpg", {nombre:"Pipas", id:"pipas"}, 1500)
+// const productos = [
+//     new Producto("sema-01", "Purple Punch", "./img/01.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
+//     new Producto("sema-02", "Bubble Gum", "./img/02.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
+//     new Producto("sema-03", "Critical Fast", "./img/03.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
+//     new Producto("sema-04", "Wifi Tangie", "./img/04.jpg", {nombre:"Semillas Feminizadas", id:"semillasFem"}, 1500),
+//     new Producto("sema-05", "Power Skunk", "./img/05.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
+//     new Producto("sema-06", "Super Skunk", "./img/06.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
+//     new Producto("sema-07", "CBD CONNECTAR", "./img/07.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
+//     new Producto("sema-08", "Girl Scout Cookies", "./img/08.jpg", {nombre:"Semillas Automaticas", id:"semillasAuto"}, 1500),
+//     new Producto("pipa-09", "Pipa de vidrio", "./img/09.jpg", {nombre:"Pipas", id:"pipas"}, 1500),
+//     new Producto("sema-10", "Pipa de vidrio 2", "./img/10.jpg", {nombre:"Pipas", id:"pipas"}, 1500),
+//     new Producto("pipa-11", "Pipa de vidrio 3", "./img/11.jpg", {nombre:"Pipas", id:"pipas"}, 1500),
+//     new Producto("pipa-12", "Pipa de Hueso", "./img/12.jpg", {nombre:"Pipas", id:"pipas"}, 1500)
 
-];
+// ];
+
+let productos = [];
+
+fetch("./js/productos.json")
+.then(response => response.json())
+.then(data =>{
+    productos = data;
+    cargarProductos(productos);
+})
 
 
 const contenedorProductos = document.querySelector("#contenedor-productos")
@@ -51,7 +60,7 @@ function cargarProductos(productosElegidos) {
 }
 
 
-cargarProductos(productos)
+
 
 botonesCategorias.forEach(boton => {
 	boton.addEventListener("click", (e) => {
@@ -91,6 +100,7 @@ if (productosEnCarritoLS){
 
 
 function agregarloAlCarrito(e){
+
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton)
     if(productosEnCarrito.some(producto => producto.id === idBoton)) {
