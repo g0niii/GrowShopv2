@@ -299,6 +299,9 @@ border-radius: 1rem;
 footer img{
     height: 100px;
 }
+.close-menu{
+    display: none;
+}
 
 /* @media screen and (max-width: 850px){
 .contenedor-productos{
@@ -325,6 +328,9 @@ footer img{
         visibility: hidden;
 
     }
+    .logo img{
+        display: none;
+    }
     .aside-visible{
         transform: translateX(0);
         opacity: 1;
@@ -343,7 +349,7 @@ footer img{
         justify-content: space-between;
         align-items: center;
     }
-    .logo img{
+    .logo1 img{
         width: 80px;
     }
     }
@@ -374,4 +380,3 @@ footer img{
 
    }
    
-}
