@@ -43,15 +43,13 @@ aside{
     top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding-right: 0;
     height: 1024px;
     transition:  0.3s;
     
 }
-.close-menu{
-    display: none;
-}
+
 
 .texto.footer{
     color: var(--color3);
@@ -76,7 +74,9 @@ footer {
 .logo img{
      width: 400px;
 }
-
+#close-menu{
+    display: none;
+}
 .boton-menu{
     background-color: transparent;
     border: 0;
@@ -87,7 +87,7 @@ footer {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .boton-menu.active{
     background-color: rgb(220, 252, 229);
@@ -144,7 +144,7 @@ main{
 
 .titulo-principal{
     color: var(--color2);
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -171,7 +171,7 @@ gap: 1rem;
 
 .producto-imagen{
     max-width: 100%;
-    border-radius: 1rem;
+    border-radius: 10rem;
 
 
 }
@@ -375,7 +375,9 @@ footer img{
     display:none;
 
    }
-   header img{
+
+   header h1 img{
     display: none;
    }
    
+ 
